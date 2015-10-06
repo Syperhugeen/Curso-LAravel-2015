@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace PlatziPHP\Jobs;
 
 use Illuminate\Bus\Queueable;
 

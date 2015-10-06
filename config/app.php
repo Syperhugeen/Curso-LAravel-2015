@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        PlatziPHP\Providers\AppServiceProvider::class,
+        PlatziPHP\Providers\AuthServiceProvider::class,
+        PlatziPHP\Providers\EventServiceProvider::class,
+        PlatziPHP\Providers\RouteServiceProvider::class,
 
     ],
 

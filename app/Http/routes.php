@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 //Prueba
 Route::get('/home' , 'HomeController@index');
+
+//Prueba 2
+Route::get('post' , 'PostsController@index');

@@ -1,5 +1,5 @@
 <?php 
-namespace App\Http\Controllers;
+namespace PlatziPHP\Http\Controllers;
 
 
 class HomeController extends Controller
