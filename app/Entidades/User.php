@@ -1,6 +1,6 @@
 <?php
 
-namespace PlatziPHP;
+namespace PlatziPHP\Entidades;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
