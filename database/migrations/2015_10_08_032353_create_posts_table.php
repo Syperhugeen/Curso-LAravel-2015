@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CretePostsTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,13 @@ class CretePostsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('posts' , function($table)
+        {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('author_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +28,6 @@ class CretePostsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists();
     }
 }

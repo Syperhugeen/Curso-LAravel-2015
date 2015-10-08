@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-
-});
 
 
-//Prueba
-Route::get('/home' , 'HomeController@index');
 
-//Prueba 2
-Route::get('post' , 'PostsController@index');
+//Home Controller
+Route::get('/' , 'HomeController@index');
+
+
