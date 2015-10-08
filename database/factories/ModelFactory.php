@@ -11,11 +11,18 @@
 |
 */
 
-$factory->define(PlatziPHP\User::class, function (Faker\Generator $faker) {
+$factory->define(PlatziPHP\Entidades\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'password' => bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(PlatziPHP\Entidades\Post::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence(),
+        //'body' => $faker->paragraph(),
     ];
 });
