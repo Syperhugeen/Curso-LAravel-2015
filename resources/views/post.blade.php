@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-<H1>Posts de la web</H1>
+<H1>{{$post->name}}</H1>
 
 
 

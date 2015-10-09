@@ -18,6 +18,17 @@ Esta pagina es de prueba y es el contenido de la meta etiqueta
 
 @section('contenido')
 
-<h1>Estos es el contenido</h1>
+        <h1>Estos son los posts </h1>
+        <ul>
+        @foreach($posts as $post)  
+
+        <li> 
+
+          {{ $post->name }} - {{ $post->author->name}}
+
+        </li>
+
+        @endforeach
+        </ul>
 
 @stop

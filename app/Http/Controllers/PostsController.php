@@ -4,6 +4,7 @@ namespace PlatziPHP\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PlatziPHP\Http\Requests;
+use PlatziPHP\Entidades\Post;
 
 
 class PostsController extends Controller
@@ -47,7 +48,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view( 'post' , ['post' => $post]);
     }
 
     /**

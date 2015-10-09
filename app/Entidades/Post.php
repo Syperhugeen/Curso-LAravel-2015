@@ -9,8 +9,8 @@ class Post extends Model
     /**
      * creo la relacion con los user
      */
-    public function user()
+    public function author()
     {
-      return $this->belongsTo(User::class);
+      return $this->belongsTo(User::class, 'author_id');
     }
 }

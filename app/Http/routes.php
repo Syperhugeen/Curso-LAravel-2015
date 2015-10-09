@@ -17,4 +17,7 @@
 //Home Controller
 Route::get('/' , 'HomeController@index');
 
+//Ruta de posts
+Route::get( 'post/{id}' , 'PostsController@show');
+
 
