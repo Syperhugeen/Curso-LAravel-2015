@@ -14,7 +14,7 @@ elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
     mix.sass(['app.scss', 'style.scss'])
-       
+       .version(['css/app.css'])
 
 
     ;

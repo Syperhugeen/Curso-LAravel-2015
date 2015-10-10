@@ -3,7 +3,7 @@
 <head>
   <title>@yield('title')</title>
   <meta name="description" content="@yield('meta-description')">
-  <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+  <link rel="stylesheet"  href=" {{url()}} {{ elixir('css/app.css') }}">
 </head>
 <body>
  @yield('contenido')

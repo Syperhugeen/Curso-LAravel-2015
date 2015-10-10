@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
-use PlatziPHP\Entidades\User;
 use PlatziPHP\Entidades\Post;
+use PlatziPHP\Entidades\User;
 
 class UserTableSeeder extends Seeder
 {
@@ -14,6 +13,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        
          User::truncate();
         Post::truncate();
 
