@@ -22,7 +22,7 @@ $factory->define(PlatziPHP\Entidades\User::class, function (Faker\Generator $fak
 
 $factory->define(PlatziPHP\Entidades\Post::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->sentence(),
-        //'body' => $faker->paragraph(),
+        'title' => $faker->sentence(),
+        'body'  => $faker->paragraph(),
     ];
 });

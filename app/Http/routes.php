@@ -18,6 +18,10 @@
 Route::get('/' , 'HomeController@index');
 
 //Ruta de posts
-Route::get( 'post/{id}' , 'PostsController@show');
+Route::get( 'post/{id}' , 	[
+							 'uses' => 'PostsController@show' ,
+							 'as'   => 'post_show'
+							]
+		  );
 
 

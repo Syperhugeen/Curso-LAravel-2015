@@ -5,13 +5,14 @@
 
 
 @section('title')
-esta es el titple
+
+
 @stop
 
 
 
 @section('meta-description')
-Esta pagina es de prueba y es el contenido de la meta etiqueta
+
 
 @stop
 
@@ -24,7 +25,11 @@ Esta pagina es de prueba y es el contenido de la meta etiqueta
 
         <li> 
 
-          {{ $post->name }} - {{ $post->author->name}}
+          <a href="{{ route('post_show' , $post->id ) }}">
+             {{ $post->title}}
+          </a>
+
+          {{ $post->title}} - {{ $post->author->title}}
 
         </li>
 

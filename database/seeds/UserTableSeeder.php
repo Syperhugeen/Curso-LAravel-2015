@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use PlatziPHP\Entidades\Post;
-use PlatziPHP\Entidades\User;
 
+use PlatziPHP\Entidades\User;
+use PlatziPHP\Entidades\Post;
 
 class UserTableSeeder extends Seeder
 {
@@ -14,8 +14,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-
-        User::truncate();
+         User::truncate();
         Post::truncate();
 
        factory(User::class , 10)->create()->each(function($user){
