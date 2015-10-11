@@ -25,3 +25,13 @@ Route::get( 'post/{id}' , 	[
 		  );
 
 
+//Validador Controller
+Route::get('auth' , [
+				  'uses' => 'AuthController@index' ,
+				  'as'   => 'auth_show'
+				 ]);
+
+Route::post('auth' , [
+				  'uses' => 'AuthController@store' ,
+				  'as'   => 'auth_store'
+				 ]);

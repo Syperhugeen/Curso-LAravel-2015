@@ -2,7 +2,7 @@
 
 namespace PlatziPHP\Http\Controllers\Auth;
 
-use PlatziPHP\User;
+use PlatziPHP\Entidades\User;
 use Validator;
 use PlatziPHP\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

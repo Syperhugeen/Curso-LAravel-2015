@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -144,6 +144,10 @@ return [
         PlatziPHP\Providers\AuthServiceProvider::class,
         PlatziPHP\Providers\EventServiceProvider::class,
         PlatziPHP\Providers\RouteServiceProvider::class,
+
+         /*
+         * Instaladas nuevas
+         */
 
     ],
 
