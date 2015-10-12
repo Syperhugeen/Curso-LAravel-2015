@@ -20,6 +20,9 @@
 @section('contenido')
 
         <h1>Estos son los posts </h1>
+
+        <a class="btn btn-primary" href=" {{ route('posts_create_path') }} ">Crear Post</a>
+
         <ul>
         @foreach($posts as $post)  
 

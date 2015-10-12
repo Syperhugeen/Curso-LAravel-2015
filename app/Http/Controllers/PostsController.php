@@ -5,6 +5,10 @@ namespace PlatziPHP\Http\Controllers;
 use Illuminate\Http\Request;
 use PlatziPHP\Http\Requests;
 use PlatziPHP\Entidades\Post;
+use Illuminate\Support\Facades\Validator;
+//use use PlatziPHP\Http\Requests\CreatePostReques;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class PostsController extends Controller
@@ -23,10 +27,11 @@ class PostsController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Para crear un controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -37,7 +42,28 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator  = Validator::make($request->all(),[
+
+                'title' => 'required',
+                'body'  => 'required',
+
+            ]);
+
+        if ($validator->fails())
+        {
+           return redirect()
+           ->route('posts_create_path')
+           ->withInput()
+           ->withErrors($validator);
+        }
+
+          $post  = new Post();
+           $post->title =$request->get('title');
+           $post->body =$request->get('body');
+           $post->author_id =Auth::id();
+           $post->save();
+
+           return redirect()->route('post_show', $post->id);
     }
 
     /**

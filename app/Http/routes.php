@@ -12,25 +12,49 @@
 */
 
 
-
+/**
+ * group sirve para agrupar Rutas y poder utilizar los middlewere con todas ellas
+ * por ejemplo en este caso agrupamos las Rutas dependiendo si esta logeado o no.
+ */
 Route::group( ['middleware'  => 'auth'] , 
 function()
-{
-//Home Controller
-Route::get('/' ,  [	 'uses' => 'HomeController@index' ,
-					 'as'   => 'home'
-				  ]
+		{
+		//Home Controller
+		Route::get('/' ,  [	 'uses' => 'HomeController@index' ,
+							 'as'   => 'home'
+						  ]
 
 
-);
+		);
 
-//Ruta de posts
-Route::get( 'post/{id}' , 	[
-							 'uses' => 'PostsController@show' ,
-							 'as'   => 'post_show'
-							]
-);
-}
+
+		//Ruta para mostrar formulario de crear post	
+		Route::get( 'post/create' , 	[
+									 'uses' => 'PostsController@create' ,
+									 'as'   => 'posts_create_path'
+									]
+		);	
+
+		//Ruta para enviar formulario posts	
+		Route::post( 'post/create' , 	[
+									 'uses' => 'PostsController@store' ,
+									 'as'   => 'posts_store_path'
+									]
+		);	
+
+
+
+		//Ruta de posts
+		Route::get( 'post/{id}' , 	[
+									 'uses' => 'PostsController@show' ,
+									 'as'   => 'post_show'
+									]
+		)->where('id' , '[0-9]+'); //ingreso reglas para los parametros
+
+		
+
+
+		}
 
 );
 
