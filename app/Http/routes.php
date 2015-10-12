@@ -13,25 +13,48 @@
 
 
 
-
+Route::group( ['middleware'  => 'auth'] , 
+function()
+{
 //Home Controller
-Route::get('/' , 'HomeController@index');
+Route::get('/' ,  [	 'uses' => 'HomeController@index' ,
+					 'as'   => 'home'
+				  ]
+
+
+);
 
 //Ruta de posts
 Route::get( 'post/{id}' , 	[
 							 'uses' => 'PostsController@show' ,
 							 'as'   => 'post_show'
 							]
-		  );
+);
+}
+
+);
 
 
-//Validador Controller
-Route::get('auth' , [
+
+
+
+
+
+
+//Inicion de sesion
+Route::get('iniciar' , [
 				  'uses' => 'AuthController@index' ,
 				  'as'   => 'auth_show'
-				 ]);
+]);
 
-Route::post('auth' , [
+//Envio de datos de inicio de sesion
+Route::post('iniciar' , [
 				  'uses' => 'AuthController@store' ,
 				  'as'   => 'auth_store'
-				 ]);
+]);
+
+//Salir de sesion, destruir la sesion
+Route::get('salir' , [
+				  'uses' => 'AuthController@destroy' ,
+				  'as'   => 'auth_exit'
+]);

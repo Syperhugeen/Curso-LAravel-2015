@@ -50,8 +50,10 @@ class AuthController extends Controller
             return redirect()->route('auth_show')->withErrors('No encontramos al usuario');
        }
 
-       return 'listo';
+       return redirect()->route('home');
     }
+
+   
 
     /**
      * Display the specified resource.
@@ -90,11 +92,15 @@ class AuthController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * 
      * @return \Illuminate\Http\Response
+     *
+     *Quita la sesion del usuario y redirecciona a otro lado
+     *
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        auth()->logout();
+        return redirect()->route('auth_show');
     }
 }

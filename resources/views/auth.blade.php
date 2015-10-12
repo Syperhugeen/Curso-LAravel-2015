@@ -25,7 +25,7 @@
   <label for="email">Email:</label>
   <input class="form-control" type="text" name="email" value="">
   <label for="password">Contraseña:</label>
-  <input class="form-control" type="text" name="password" value="">
+  <input class="form-control" type="password" name="password" value="">
   <input class="btn btn-primary" type="submit" value="Entrar">
 
 

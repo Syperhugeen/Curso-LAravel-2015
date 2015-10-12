@@ -6,6 +6,24 @@
   <link rel="stylesheet"  href=" {{url()}} {{ elixir('css/app.css') }}">
 </head>
 <body>
- @yield('contenido')
+
+
+<div class"container">
+
+	@if($currentUser) 
+
+	Hola {{ $currentUser->name}}
+
+	<a href="{{ route('auth_exit')  }}">Salir</a>
+
+	@else 
+	  <a href="{{ route('auth_show')  }}">Iniciar Sesion</a>
+
+	@endif
+
+	@yield('contenido')
+
+</div>
+ 
 </body>
 </html>
