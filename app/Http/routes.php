@@ -51,8 +51,23 @@ function()
 									]
 		)->where('id' , '[0-9]+'); //ingreso reglas para los parametros
 
-		
+		//Ruta de posts editar
+		Route::get( 'post/{id}/editar' , 	[
+									 'uses' => 'PostsController@edit',
+									 'as'   => 'post_edite'									]
+		)->where('id' , '[0-9]+'); //ingreso reglas para los parametros
 
+		//Ruta de posts editar Patch
+		Route::patch( 'post/{id}/editar' , 	[
+									 'uses' => 'PostsController@update',
+									 'as'   => 'post_patch'									]
+		)->where('id' , '[0-9]+'); //ingreso reglas para los parametros
+
+		//Ruta de posts eliminar
+		Route::delete( 'post/{id}/editar' , 	[
+									 'uses' => 'PostsController@destroy',
+									 'as'   => 'post_delete'									]
+		)->where('id' , '[0-9]+'); //ingreso reglas para los parametros
 
 		}
 
