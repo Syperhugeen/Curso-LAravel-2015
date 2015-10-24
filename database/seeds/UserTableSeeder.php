@@ -14,7 +14,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         
-         User::truncate();
+        User::truncate();
         Post::truncate();
 
        factory(User::class , 10)->create()->each(function($user){

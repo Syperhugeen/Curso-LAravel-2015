@@ -14,7 +14,8 @@
 
 	Hola {{ $currentUser->name}}
 
-	<a href="{{ route('auth_exit')  }}">Salir</a>
+	<a href="{{ route('auth_exit')  }}"> Salir</a>
+  <a href="{{ route('home')  }}">            Home</a>
 
 	@else 
 	  <a href="{{ route('auth_show')  }}">Iniciar Sesion</a>

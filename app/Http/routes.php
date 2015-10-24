@@ -19,13 +19,7 @@
 Route::group( ['middleware'  => 'auth'] , 
 function()
 		{
-		//Home Controller
-		Route::get('/' ,  [	 'uses' => 'HomeController@index' ,
-							 'as'   => 'home'
-						  ]
-
-
-		);
+		
 
 
 		//Ruta para mostrar formulario de crear post	
@@ -44,12 +38,7 @@ function()
 
 
 
-		//Ruta de posts
-		Route::get( 'post/{id}' , 	[
-									 'uses' => 'PostsController@show' ,
-									 'as'   => 'post_show'
-									]
-		)->where('id' , '[0-9]+'); //ingreso reglas para los parametros
+		
 
 		//Ruta de posts editar
 		Route::get( 'post/{id}/editar' , 	[
@@ -75,9 +64,20 @@ function()
 
 
 
+//Home Controller
+Route::get('/' ,  [	 'uses' => 'HomeController@index' ,
+                      'as'   => 'home'
+ ]
 
 
+);
 
+//Ruta de posts
+Route::get( 'post/{id}' , 	[
+									            'uses' => 'PostsController@show' ,
+									            'as'   => 'post_show'
+									          ]
+		)->where('id' , '[0-9]+'); //ingreso reglas para los parametros
 
 
 //Inicion de sesion
